@@ -1,5 +1,5 @@
 {
-  "name": "dms",
+  "name": "npm",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "bootstrap": "^4.5.0",
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",
+    "node-fetch": "^2.6.0",
     "popper.js": "^1.16.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
@@ -53,5 +54,17 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "Các file tài nguyên được đặt trong thư mục assets, các layout được đặt ở views, điều hướng các layout bằng router.\\\r Sử dụng lệnh sau để chạy thử trang web.\r ```sh\r $ npm run serve\r ``` \r Sử dụng lệnh sau để tạo trang web\r ```sh\r $ npm run build \r ``` \r *** Lưu ý: Trong trường hợp bị lỗi: \r ```sh\r vue-cli-service not found\r ``` \r Thì cần phải cài đặt lại npm \r ```sh\r $ npm install\r ``` \r Tài khoản để đăng nhập vào manager view là:\\\r username: admin\\\r password: admin\r ### ---------------------------------------------------------------------\r Style của từng trang phải được đặt tầm vực là scoped, vd: ```<style scoped></style>```\\\r Các trang web để tham khảo bao gồm https://vuetifyjs.com/ https://cli.vuejs.org/guide/",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/autumn16/dms-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/autumn16/dms-frontend/issues"
+  },
+  "homepage": "https://github.com/autumn16/dms-frontend#readme"
 }

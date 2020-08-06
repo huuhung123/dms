@@ -1,127 +1,119 @@
 <template>
-    <div>
-        <header class="header">
-            <img src="../assets/home-logo.png" alt="" />
-            <nav>
-                <ul>
-                    <li><router-link to="#" id="about">About Us</router-link></li>
-                    <li><router-link to="#" id="news">News</router-link></li>
-                    <li><router-link to="./signin" id="signIn" style="padding-right:20px; position:relative;">Sign In</router-link></li>
-                </ul>
-            </nav>
-        </header>
-        <section class="description">
-            <div class="description__content">
-                <h2>WHY CHOOSE US?</h2>
-                <p>We're leading Vietnam's dormitory renting service.</p>
-                <p>Start your exploration with us now!</p>
-                <div class="description__button">
-                    <v-btn class="text-decoration-none" color="red" dark  to="frequently-asked-question">Frequently Asked Question</v-btn>
-                    <v-btn class="text-decoration-none" color="blue" dark  to="sign-up">Register Now</v-btn>
-                </div>
-            </div>
-            <img src="../assets/img_des.png" alt="">
-        </section>
-        <footer class="footer">
-            <p>© 2020 DMS Corporation • Developed by CLMCA Studio</p>
-        </footer>
-    </div>
+  <div>
+    <v-app id="bg">
+      <v-container fluid>
+        <v-row align="center" justify="space-around" id="nav">
+          <v-col md="0" style="margin-left: 40px;">
+            <img src="../assets/home-logo.png" width="250px" height="auto" />
+          </v-col>
+          <v-col md="auto">
+            <router-link id="menu" to="#">About Us</router-link>
+            <router-link id="menu" to="#">News</router-link>
+            <router-link id="menu" to="./sign-in">Sign In</router-link>
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-content>
+        <v-row align="center" justify="center" style="margin-top: 50px;">
+          <v-col md="auto" id="description">
+            <h1>WHY CHOOSE US ?</h1>
+            <p>
+              We're leading Vietnam's dormitory
+              <br />management services
+            </p>
+            <v-btn color="primary" to="frequently-asked-question">
+              <v-icon style="margin-right: 10px;">mdi-frequently-asked-questions</v-icon>Frequently Asked Question
+            </v-btn>
+            <v-btn color="error" to="sign-up" style="margin-left: 10px;">
+              Register Now !
+              <v-icon style="margin-bottom: -3px;">mdi-chevron-right</v-icon>
+            </v-btn>
+          </v-col>
+          <v-col md="auto">
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_Jos3jH.json"  background="transparent"  speed="1"  style="width: 400px; height: 400px;"  loop autoplay></lottie-player>
+          </v-col>
+        </v-row>
+      </v-content>
+      <v-bottom-navigation id="navfooter">
+        <v-row align="center" justify="center">
+          <v-col md="auto">
+            <p id="footer">© 2020 DMS Corporation • Developed by CLMCA Studio</p>
+          </v-col>
+        </v-row>
+      </v-bottom-navigation>
+    </v-app>
+  </div>
 </template>
 
 <script>
-//import DetailView from './detail'
-
 export default {
-    //components: { Detail },
-    data: () => ({
-    
-    })
-}
+  data: () => ({}),
+};
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
 
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
-@import url('https://fonts.googleapis.com/css2?family=Roboto');
-
-  /* Navigation Bar */
-
-.header {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #1867c0;
+#nav {
+  /*
+	background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+	*/
+  height: 80px;
+  margin-top: -12px;
+  margin-bottom: -12px;
 }
 
-.header img {
-    padding-right: 10%;
-    width: 30%;
+#menu {
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  margin-right: 30px;
+  font-family: "Quicksand", sans-serif;
+  text-shadow: 1px 1px 20px black;
 }
 
-.header nav ul {
-    list-style: none;
-    margin-bottom: 0;
-    padding-left: 40px;
+#menu:hover {
+  opacity: 60%;
 }
 
-.header nav ul li {
-    display: inline;
-    margin: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 24px;
+#bg {
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
 }
 
-.header nav ul li a:hover {
-    opacity: 0.65;
+#description {
+  font-family: "Quicksand", sans-serif;
+}
+#description h1 {
+  font-size: 48px;
+  color: white;
+  text-shadow: 1px 1px 20px black;
 }
 
-.header nav ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
+#description p {
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 10px 20px black;
 }
 
-/* Description */
-.description {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5rem 0;
-    background-image: url(../assets/bg-home.jpg);
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 40rem;
+#navfooter {
+  /*
+	background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+	*/
+  background-color: transparent;
+  position: fixed;
+  text-shadow: 1px 1px 100px black;
 }
 
-.description img {
-    width: 30%;
+#footer {
+  color: white;
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
 }
-
-.description__content h2 {
-    font-size: 48px;
-    color: rgb(16, 61, 112);
-}
-
-.description__content p {
-    font-size: 24px;
-    color: rgb(16, 61, 112);
-}
-
-.description__button .v-btn {
-    margin: 0 10px;
-}
-
-.footer {
-    width: 100%;
-    background-color: #1867c0;
-}
-
-.footer p {
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
 </style>
