@@ -1,0 +1,25 @@
+extends ../layouts/common.pug
+
+block content
+    h1.text-center UPDATE SERVICE
+    p.text-center ID: #{service._id}
+
+    form(action="/service/update/" + service._id, method="POST")
+        .form-group 
+            label.font-weight-bold Name:
+            input.form-control(type="text", name="name", value=service.name)
+
+        .form-group 
+            label.font-weight-bold Service:
+            input.form-control(type="text", name="service", value=service.service)
+    
+        .form-group
+            label.font-weight-bold Phone:
+            input.form-control(type="text", name="phone", value=service.phone)
+
+        .form-group
+            label.font-weight-bold Place:
+            input.form-control(type="text", name="place", value=service.place)
+        button.btn.btn-primary Update
+
+    

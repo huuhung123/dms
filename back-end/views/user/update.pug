@@ -1,0 +1,22 @@
+extends ../layouts/common.pug
+
+block content
+    h1.text-center UPDATE USER
+    p.text-center ID: #{user._id}
+    if errUpdate 
+        .alert.alert-danger(role='alert') Err update
+
+    form(action="/user/update" + user._id, method="POST")
+        .form-group
+            label Old password:
+            input.form-control(type="text", name="oldPassword", value="")
+        .form-group 
+            label New password:
+            input.form-control(type="text", name="newPassword", value="")
+
+        .form-group 
+            label Confirm:
+            input.form-control(type="text", name="confirm", value="")
+        button.btn.btn-primary Update
+
+    

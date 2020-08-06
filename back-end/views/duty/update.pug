@@ -1,0 +1,24 @@
+extends ../layouts/common.pug
+
+block content
+
+    h1.text-center UPDATE DUTY
+    p.text-center ID: #{duty._id}
+
+    form(action="/duty/update/" + duty._id, method="POST")
+        .form-group 
+            label.font-weight-bold Name:
+            input.form-control(type="text", name="name", value=duty.name)
+
+        .form-group 
+            label.font-weight-bold Time:
+            input.form-control(type="text", name="time", value=duty.time)
+    
+        .form-group
+            label.font-weight-bold Phone:
+            input.form-control(type="text", name="phone", value=duty.phone)
+
+        .form-group
+            label.font-weight-bold Place:
+            input.form-control(type="text", name="place", value=duty.place)
+        button.btn.btn-primary Update

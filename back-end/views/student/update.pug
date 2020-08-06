@@ -1,0 +1,14 @@
+extends ../layouts/common.pug
+
+block content
+    h1.text-center UPDATE STUDENT
+
+    form(action="/student/update/" + student._id, method="POST")
+        .form-group 
+            label.font-weight-bold Name:
+            input.form-control(type="text", name="name", value=student.name)
+
+        .form-group 
+            label.font-weight-bold Age:
+            input.form-control(type="text", name="age", value=student.age)
+        button.btn.btn-primary Update

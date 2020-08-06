@@ -1,0 +1,30 @@
+extends ../layouts/common.pug
+
+block content
+  h1.text-center USER
+
+
+  table.table.table-bordered
+    thead.thead-dark
+      tr
+        th(scope='col') #ID
+        th(scope='col') User
+        th(scope='col') Password
+        th(scope='col') CreatedTime
+        th(scope='col') Operation
+    each user in listUser
+      tbody
+        tr
+          th(scope='row')= user._id
+          td= user.user
+          td= user.password
+          td= user.createdTime
+          td
+            a.btn.btn-danger(href="/user/delete/" + user._id) Delete
+            //- = " "
+            //- = " "
+            //- a.btn.btn-danger(href="/user/update/" + user._id) Update 
+
+  a.btn.btn-warning(href='/user/create') Create User 
+  = " "
+  a.btn.btn-primary(href='/user/login') Login User

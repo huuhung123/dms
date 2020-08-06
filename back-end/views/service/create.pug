@@ -1,0 +1,22 @@
+extends ../layouts/common.pug
+
+block content
+    h1.text-center Create service
+
+    form(action="/service/create", method="POST")
+        .form-group 
+            label.font-weight-bold Name:
+            input.form-control(type="text", name="name", value="")
+
+        .form-group 
+            label.font-weight-bold Service:
+            input.form-control(type="text", name="service", value="")
+    
+        .form-group
+            label.font-weight-bold Phone:
+            input.form-control(type="text", name="phone", value="")
+
+        .form-group
+            label.font-weight-bold Place:
+            input.form-control(type="text", name="place", value="")
+        button.btn.btn-primary Create

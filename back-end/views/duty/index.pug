@@ -1,0 +1,40 @@
+extends ../layouts/common.pug
+
+block content
+  h1.text-center DUTY
+
+  form(action="/duty/search", method="GET")
+    .form-group 
+      input.form-control(type="text", name="q")
+    .form-group 
+      button.btn.btn-primary Search
+
+  table.table.table-bordered
+    thead.thead-dark
+      tr
+        th(scope='col') #ID
+        th(scope='col') Name
+        th(scope='col') Time
+        th(scope='col') Phone
+        th(scope='col') Place
+        th(scope='col') CreatedTime
+        th(scope='col') UpdatedTime
+        th(scope='col') Operation
+    each duty in listDuty
+      tbody
+        tr
+          th(scope='row')= duty._id
+          td= duty.name
+          td= duty.time
+          td= duty.phone
+          td= duty.place
+          td= duty.createdTime
+          td= duty.updatedTime
+          td
+            a.btn.btn-danger(href="/duty/update/" + duty._id) Update 
+            = " "
+            a.btn.btn-warning(href="/duty/delete/" + duty._id) Delete
+
+  a.btn.btn-primary(href="/duty/create") Create duty
+
+  

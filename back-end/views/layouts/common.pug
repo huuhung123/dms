@@ -1,0 +1,25 @@
+html
+    head
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/styles/custom.css")
+    body
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+             a.navbar-brand(href='#') DORMITORY SERVICE SYSTEM
+             button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                 span.navbar-toggler-icon
+             #navbarSupportedContent.collapse.navbar-collapse
+                 ul.navbar-nav.mr-auto
+                    li.nav-item.active
+                         a.nav-link(href='/') Home
+                    li.nav-item
+                         a.nav-link(href='/user') User
+                    li.nav-item
+                        a.nav-link(href='/student') Student
+                    li.nav-item
+                        a.nav-link(href='/visitor') Visitor
+                    li.nav-item
+                        a.nav-link(href='/duty') Duty
+                    li.nav-item
+                        a.nav-link(href='/service') Service
+        .container.pt-5
+             block content

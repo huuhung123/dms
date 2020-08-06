@@ -1,0 +1,23 @@
+extends ../layouts/common.pug
+
+block content
+    h1 Create user
+    if errorUser
+        .alert.alert-danger(role='alert') User exist
+    if errPassword
+        .alert.alert-danger(role='alert') Error password
+    form(action="/user/create", method="POST")
+        .form-group 
+            label.font-weight-bold  User:
+            input.form-control(type="text", name="user", value="")
+
+        .form-group 
+            label.font-weight-bold  Password:
+            input.form-control(type="password", name="password", value="")
+    
+        .form-group
+            label.font-weight-bold  Confirm Password:
+            input.form-control(type="password", name="confirm", value="")
+        button.btn.btn-primary Create
+        
+

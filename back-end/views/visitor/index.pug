@@ -1,0 +1,34 @@
+extends ../layouts/common.pug
+
+block content
+  h1.text-center VISITOR
+
+  form(action="/visitor/search", method="GET")
+    .form-group 
+      input.form-control(type="text", name="q")
+    .form-group 
+      button.btn.btn-primary Search
+
+
+  table.table.table-bordered
+    thead.thead-dark
+      tr
+        th(scope='col') #ID
+        th(scope='col') Name
+        th(scope='col') Age
+        th(scope='col') CreatedTime
+        th(scope='col') Operation
+    each visitor in listVisitor
+      tbody
+        tr
+          th(scope='row')= visitor._id
+          td= visitor.name
+          td= visitor.age
+          td= visitor.createdTime
+          td
+            a.btn.btn-danger(href="/visitor/update/" + visitor._id) Update
+            = " "
+            a.btn.btn-warning(href="/visitor/delete/" + visitor._id) Delete
+
+  a.btn.btn-primary(href="/visitor/create") Create visitor
+

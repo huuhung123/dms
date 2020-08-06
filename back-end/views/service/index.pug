@@ -1,0 +1,41 @@
+extends ../layouts/common.pug
+
+block content
+  h1.text-center SERVICE
+  
+  form(action="/service/search", method="GET")
+    .form-group 
+      input.form-control(type="text", name="q")
+    .form-group 
+      button.btn.btn-primary Search
+
+  table.table.table-bordered
+    thead.thead-dark
+      tr
+        th(scope='col') #ID
+        th(scope='col') Name
+        th(scope='col') Service
+        th(scope='col') Phone
+        th(scope='col') Place
+        th(scope='col') CreatedTime
+        th(scope='col') Operation
+    each service in listService
+      tbody
+        tr
+          th(scope='row')= service._id
+          td= service.name
+          td= service.service
+          td= service.phone
+          td= service.place
+          td= service.createdTime
+          td
+            a.btn.btn-danger(href="/service/update/" + service._id) Update 
+            = " "
+            a.btn.btn-warning(href="/service/delete/" + service._id) Delete
+
+  a.btn.btn-primary(href="/service/create") Create service
+
+
+
+
+
